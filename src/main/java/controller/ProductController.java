@@ -1,5 +1,6 @@
 package controller;
 
+import model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,5 +26,6 @@ public class ProductController {
     @PutMapping("/create")
     public Product create(@RequestBody Product product) {
         return productService.create(product);
+
     }
 }

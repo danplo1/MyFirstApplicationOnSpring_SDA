@@ -2,6 +2,7 @@ package controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import service.HelloWorldService;
 
 @RestController
 //@RequestMapping(tu możemy dodać przedrostek do resources)

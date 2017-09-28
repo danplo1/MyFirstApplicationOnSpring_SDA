@@ -1,11 +1,13 @@
 import enums.Authority;
 import model.User;
-import org.apache.catalina.core.ApplicationContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import repository.UserRepository;
@@ -19,19 +21,19 @@ import java.util.UUID;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
-
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableSwagger2
+
 public class Application implements CommandLineRunner {
 
-//    @Autowired
+    @Autowired
     private UserRepository userRepository;
 
-//    @Autowired
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
- // @Autowired
+    @Autowired
     private ApplicationContext applicationContext;
 
     public static void main(String[] args) {
@@ -71,8 +73,9 @@ public class Application implements CommandLineRunner {
         user.setAuthority(Authority.ADMIN);
         user = userRepository.save(user);
 
-        System.out.println("Created initial user with login: xenteros and password: " + password);
+        System.out.println("Created initial user with login: danplo1 and password: " + password);
 
     }
-
 }
+
+
